@@ -1,0 +1,122 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Lora|Alegreya+Sans:100');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "product.css";
+
+html {
+    font-size: 100%;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', serif;
+    line-height: 1.4;
+    max-width: 72em;
+    margin: auto;
+}
+
+main {
+    padding: 1.4rem 0.6rem;
+}
+
+h1,
+h1.title,
+h2,
+h4 {
+    margin-top: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1.title {
+    font-size: 2.4rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+.container {
+    padding: 1rem;
+    margin-bottom: 3.2rem;
+}
+
+.container p {
+    line-height: 1.4;
+    font-size: 1.2rem;
+}
+
+.container img {
+    width: 100%;
+}
+
+.top-nav {
+    top: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding: 0.8rem;
+    background: white;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.top-nav a {
+    text-align: center;
+    color: rgb(25, 0, 255);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.top-nav a:hover {
+    text-decoration: none;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background: white;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.bottom-nav a {
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+}
+
+.bottom-nav a.active {
+    color: #4e75ba;
+}
+
+.bottom-nav i {
+    display: block;
+}
+
+.bottom-nav span {
+    font-size: 0.7rem;
+}
+
+@media (min-width: 700px) {
+    .bottom-nav {
+        max-width: 72em;
+    }
+}

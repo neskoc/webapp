@@ -1,0 +1,82 @@
+.table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+    }
+
+    td {
+        border-top: 1px solid #ccc;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+        padding: 0.2rem 0.8rem;
+    }
+
+    .number-cell {
+        text-align: right;
+    }
+}
+
+.table-scroll {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+}
+
+.table-striped {
+    tr:nth-of-type(2n) {
+        background-color: #eee;
+    }
+}
+
+
+@media only screen and (max-width: 668px) {
+    .table-stacked {
+        display: block;
+
+        tr {
+            display: block;
+        }
+
+        // We do not use display: none; for accessibility reasons
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        // För att inte tabellen ska kollapsa
+        tbody {
+            display: block;
+        }
+
+        td {
+            display: block;
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+            white-space: normal;
+            text-align: right;
+        }
+
+        td::before {
+            /* För att visa tabell rubrik */
+            content: attr(data-title);
+
+            /* Använder top och left för efterlikna padding */
+            position: absolute;
+            top: 0.33rem;
+            left: 0.33rem;
+            width: 45%;
+            padding-right: 0.55rem;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+    }
+}

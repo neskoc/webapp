@@ -1,0 +1,87 @@
+/* style.css */
+
+h1.product-name {
+    margin-top: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 2.8rem;
+}
+
+.inv-container {
+    max-width: 30em;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(25, 0, 255);
+}
+
+.flex-row:hover {
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.flex-row:nth-child(even) {
+    background-color: #ddd;
+}
+
+.flex-item {
+    text-align: left;
+    margin: 6px;
+}
+
+.flex-item.left {
+    order: 1;
+    flex-grow: 3;
+}
+
+.flex-item.right {
+    order: 2;
+    text-align: right;
+}
+
+
+.product-info {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+dl.product-info {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: visible;
+}
+
+.product-info dt {
+    flex: 0 0 45%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.product-info dd {
+    flex: 0 0 55%;
+    margin-left: auto;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@media (min-width: 700px) {
+    .product-info dt {
+        flex: 0 0 20%;
+    }
+
+    .product-info dd {
+        flex: 0 0 80%;
+    }
+}
