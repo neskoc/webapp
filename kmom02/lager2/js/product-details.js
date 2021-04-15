@@ -8,23 +8,15 @@
 import { menu } from "./menu.js";
 import { inventory } from "./inventory.js";
 
-let productDetails = (function () {
-    let showProduct = function (product) {
+let productDetails = {
+    showProductDetails: function (product) {
         window.topNavigation.innerHTML = "";
-
-        /* let topNav = document.createElement("ul");
-        topNav.className = "top-ul";
-
-        let listItem = document.createElement("li");
-        listItem.className = "top-li"; */
 
         let topNavElement = document.createElement("a");
 
         topNavElement.textContent = "Lagersaldo";
         topNavElement.addEventListener("click", inventory.showInventory);
 
-        /* listItem.appendChild(listItemAnchor);
-        topNav.appendChild(listItem); */
         window.topNavigation.appendChild(topNavElement);
 
         window.mainContainer.innerHTML = "";
@@ -58,13 +50,7 @@ let productDetails = (function () {
         window.rootElement.appendChild(window.mainContainer);
 
         menu.showMenu("inventory");
-    };
-
-    return {
-        showProduct: showProduct
-    };
-})();
-
-export {
-    productDetails
+    }
 };
+
+export { productDetails };

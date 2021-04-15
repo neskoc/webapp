@@ -6,11 +6,15 @@
 // inventory.js
 
 import { menu } from "./menu.js";
-import { apiKey, baseUrl } from "./vars.js";
 import { productDetails } from "./product-details.js";
+import { products } from "./products.js";
 
-let inventory = (function () {
-    let showInventory = function () {
+let inventory = {
+    showInventory: function() {
+        products.getAllProducts(inventory.renderProducts);
+    },
+
+    renderProducts: function() {
         if (document.contains(document.getElementById("top-nav"))) {
             window.rootElement.removeChild(window.topNavigation);
         }
@@ -25,37 +29,9 @@ let inventory = (function () {
 
         productList.className = "inv-container";
 
-        fetch(`${baseUrl}/products?api_key=${apiKey}`)
-            .then(response => response.json())
-            .then(jsonData => {
-                console.log(jsonData);
+        let productRows = products.allProducts.map(product => generateProductList(product));
 
-                jsonData.data.forEach(function (product) {
-                    // console.log(product);
-                    let productRow = document.createElement("div");
-
-                    productRow.className = "flex-row";
-
-                    let productName = document.createElement("div");
-
-                    productName.className = "flex-item left";
-                    productName.textContent = product.name;
-
-                    let productCount = document.createElement("div");
-
-                    productCount.className = "flex-item right";
-                    productCount.textContent = product.stock;
-
-                    productRow.addEventListener("click", function handleClick() {
-                        console.log(product);
-                        productDetails.showProduct(product);
-                    });
-
-                    productRow.appendChild(productName);
-                    productRow.appendChild(productCount);
-                    productList.appendChild(productRow);
-                });
-            });
+        productRows.map(productRow => productList.appendChild(productRow));
 
         window.mainContainer.appendChild(title);
         window.mainContainer.appendChild(productList);
@@ -63,13 +39,34 @@ let inventory = (function () {
         window.rootElement.appendChild(window.mainContainer);
 
         menu.showMenu("inventory");
-    };
-
-    return {
-        showInventory: showInventory
-    };
-})();
-
-export {
-    inventory
+    }
 };
+
+let generateProductList = function (product) {
+    // console.log(product);
+    let productRow = document.createElement("div");
+
+    productRow.className = "flex-row";
+
+    let productName = document.createElement("div");
+
+    productName.className = "flex-item left";
+    productName.textContent = product.name;
+
+    let productId = document.createElement("div");
+
+    productId.className = "flex-item right";
+    productId.textContent = product.id;
+
+    productRow.addEventListener("click", function handleClick() {
+        console.log(product);
+        productDetails.showProductDetails(product);
+    });
+
+    productRow.appendChild(productName);
+    productRow.appendChild(productId);
+
+    return productRow;
+};
+
+export { inventory };

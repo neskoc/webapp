@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=Lora|Alegreya+Sans:100');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import "product.css";
 
 html {
     font-size: 100%;
@@ -17,6 +16,7 @@ body {
     margin: auto;
 }
 
+
 main {
     padding: 1.4rem 0.6rem;
 }
@@ -24,15 +24,20 @@ main {
 h1,
 h1.title,
 h2,
-h4 {
+h3 {
     margin-top: 0;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1.title {
+h1 {
     font-size: 2.4rem;
     border-bottom: 1px solid #ccc;
     margin-bottom: 2.8rem;
+}
+
+h1.title,
+.p-center {
+    text-align: center;
 }
 
 h2 {
@@ -40,14 +45,16 @@ h2 {
     margin-bottom: 1.4rem;
 }
 
-h4 {
+h3 {
     font-size: 1.4rem;
     margin-bottom: 0;
 }
 
 .container {
     padding: 1rem;
-    margin-bottom: 3.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
 }
 
 .container p {
@@ -57,29 +64,8 @@ h4 {
 
 .container img {
     width: 100%;
-}
-
-.top-nav {
-    top: 0;
-    overflow: hidden;
-    border-bottom: 1px solid #ccc;
-    padding: 0.8rem;
-    background: white;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: left;
-}
-
-.top-nav a {
-    text-align: center;
-    color: rgb(25, 0, 255);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.top-nav a:hover {
-    text-decoration: none;
+    display: block;
+    margin: auto;
 }
 
 .bottom-nav {
@@ -107,6 +93,10 @@ h4 {
     color: #4e75ba;
 }
 
+.bottom-nav a.active {
+    color: #4e75ba;
+}
+
 .bottom-nav i {
     display: block;
 }
@@ -118,5 +108,9 @@ h4 {
 @media (min-width: 700px) {
     .bottom-nav {
         max-width: 72em;
+    }
+
+    .profile-pic {
+        max-width: 600px;
     }
 }

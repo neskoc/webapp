@@ -3,28 +3,20 @@
 
 "use strict";
 
-// product-details.js
+// order-items.js
 
 import { menu } from "./menu.js";
-import { inventory } from "./inventory.js";
+import { newOrders } from "./new-orders.js";
 
 let orderItems = (function () {
     let showOrderItems = function (product) {
         window.topNavigation.innerHTML = "";
 
-        /* let topNav = document.createElement("ul");
-        topNav.className = "top-ul";
-
-        let listItem = document.createElement("li");
-        listItem.className = "top-li"; */
-
         let topNavElement = document.createElement("a");
 
-        topNavElement.textContent = "Lagersaldo";
-        topNavElement.addEventListener("click", inventory.showInventory);
+        topNavElement.textContent = "New orders";
+        topNavElement.addEventListener("click", newOrders.showNewOrders);
 
-        /* listItem.appendChild(listItemAnchor);
-        topNav.appendChild(listItem); */
         window.topNavigation.appendChild(topNavElement);
 
         window.mainContainer.innerHTML = "";
@@ -39,7 +31,7 @@ let orderItems = (function () {
         productInfoList.className = "product-info";
 
         for (let key in product) {
-            if (key !== "name") {
+            if (key !== "name" && key !== "order_items") {
                 let productInfoTerm = document.createElement("dt");
                 let productInfoDescription = document.createElement("dd");
 
@@ -57,7 +49,7 @@ let orderItems = (function () {
         window.rootElement.appendChild(window.topNavigation);
         window.rootElement.appendChild(window.mainContainer);
 
-        menu.showMenu("new-orders");
+        menu.showMenu("checklist");
     };
 
     return {

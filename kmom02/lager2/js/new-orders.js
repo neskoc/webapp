@@ -5,12 +5,16 @@
 
 // js/new-orders.js
 
-import { menu } from "./old.menu.js";
-import { apiKey, baseUrl } from "./vars.js";
-import { orderItems } from "./order-items.js";
+import { menu } from "./menu.js";
+import { orders } from "./orders.js";
+import { orderDetails } from "./order-details.js";
 
-let newOrders = (function () {
-    let showNewOrders = function () {
+let newOrders = {
+    showNewOrders: function() {
+        orders.getAllOrders(newOrders.renderOrders);
+    },
+
+    renderOrders: function () {
         if (document.contains(document.getElementById("top-nav"))) {
             window.rootElement.removeChild(window.topNavigation);
         }
@@ -19,35 +23,25 @@ let newOrders = (function () {
         let title = document.createElement("h1");
 
         title.className = "title";
-        title.textContent = "New orders";
+        title.textContent = "Nya ordrar";
 
         let orderList = document.createElement("div");
 
         orderList.className = "inv-container";
 
-        fetch(`${baseUrl}/orders?api_key=${apiKey}`)
-            .then(response => response.json())
-            .then(jsonData => {
-                console.log(jsonData);
-                let orderRows = jsonData.data.map(order => generateOrderList(order));
+        let newOrders = orders.allOrders.filter(order => order.status === 'Ny');
+        let orderRows = newOrders.map(order => generateOrderList(order));
 
-                orderRows.map(orderRow => orderList.appendChild(orderRow));
-            });
+        orderRows.map(orderRow => orderList.appendChild(orderRow));
 
         window.mainContainer.appendChild(title);
         window.mainContainer.appendChild(orderList);
 
         window.rootElement.appendChild(window.mainContainer);
 
-        menu.showMenu("new-orders");
-    };
-
-    let publicAPI = {
-        showNewOrders: showNewOrders
-    };
-
-    return publicAPI;
-})();
+        menu.showMenu("checklist");
+    }
+};
 
 let generateOrderList = function (order) {
     // console.log(order);
@@ -67,7 +61,7 @@ let generateOrderList = function (order) {
 
     orderRow.addEventListener("click", function handleClick() {
         console.log(order);
-        orderItems.showOrderItems(order);
+        orderDetails.showProductListForPick(order);
     });
 
     orderRow.appendChild(orderName);

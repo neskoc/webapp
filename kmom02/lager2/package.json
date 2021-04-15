@@ -8,20 +8,20 @@
     "start": "webpack --watch  --config webpack.dev.config.js",
     "build": "webpack --config webpack.prod.config.js",
     "lint": "stylelint \"**/*.scss\"",
-    "watch": "sass kmom/scss/style.scss:kmom/css/style.css kmom/scss/style-dark.scss:kmom/css/style-dark.css --no-source-map --watch",
-    "watch-min": "sass kmom/scss/style.scss:kmom/css/style.min.css kmom/scss/style-dark.scss:kmom/css/style-dark.min.css --no-source-map --watch --style compressed",
-    "style": "npm run style-light && npm run style-dark",
-    "style-min": "npm run style-light-min && npm run style-dark-min"
+    "watch": "sass scss/style.scss:css/style.css --no-source-map --watch",
+    "style": "sass scss/style.scss css/style.css --no-source-map",
+    "style-min": "sass scss/style.scss css/style.min.css --no-source-map --style compressed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.32.8",
+    "stylelint": "^13.12.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
     "webpack": "^5.32.0",
     "webpack-cli": "^4.6.0"
-  },
-  "dependencies": {
-    "sass": "^1.32.8"
   }
 }

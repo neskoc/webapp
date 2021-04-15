@@ -6,16 +6,18 @@
 // menu.js
 
 import { home } from "./home.js";
-import { inventory } from "./inventory.js";
-import { newOrders } from "./new-orders.js";
+import { about } from "./about.js";
+import { github } from "./github.js";
+import { report } from "./report.js";
 
 let menu = (function () {
     let showMenu = function (selected) {
         window.navigation.innerHTML = "";
 
-        let navElements = [{name: "Home", class: "home", nav: home.showHome},
-            {name: "Lagersaldo", class: "inventory", nav: inventory.showInventory},
-            {name: "Plocklista", class: "checklist", nav: newOrders.showNewOrders}];
+        let navElements = [{name: "Me", class: "home", nav: home.showHome},
+            {name: "Om", class: "free_breakfast", nav: about.showAbout},
+            {name: "Github", class: "folder", nav: github.showGithub},
+            {name: "Redovisning", class: "people", nav: report.showReport}];
 
         navElements.forEach(function (element) {
             let navElement = document.createElement("a");

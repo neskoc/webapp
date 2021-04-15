@@ -1,8 +1,9 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro');
-@import url('https://fonts.googleapis.com/css?family=Lora|Alegreya+Sans:100');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import "product.css";
+/* style.scss */
+@import '../node_modules/normalize.css/normalize';
+@import 'typography';
+@import 'variables';
+@import 'color-palette';
+@import 'product';
 
 html {
     font-size: 100%;
@@ -11,9 +12,10 @@ html {
 }
 
 body {
-    font-family: 'Merriweather', serif;
-    line-height: 1.4;
-    max-width: 72em;
+    font-family: $standard-font-family;
+    font-size: $body-font-size;
+    line-height: $body-line-hight;
+    max-width: $body-max-width;
     margin: auto;
 }
 
@@ -24,25 +26,25 @@ main {
 h1,
 h1.title,
 h2,
-h4 {
+h3 {
     margin-top: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $header-font-family;
 }
 
 h1.title {
-    font-size: 2.4rem;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 2.8rem;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-margin-bottom;
+    border-bottom: 1px solid $border-line-color;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 1.4rem;
+    font-size: $h2-font-size;
+    margin-bottom: $h2-margin-bottom;
 }
 
-h4 {
-    font-size: 1.4rem;
-    margin-bottom: 0;
+h3 {
+    font-size: $h3-font-size;
+    margin-bottom: $h3-margin-bottom;
 }
 
 .container {
@@ -51,8 +53,9 @@ h4 {
 }
 
 .container p {
-    line-height: 1.4;
-    font-size: 1.2rem;
+    line-height: $body-line-hight;
+    font-size: $body-font-size;
+    margin-bottom: $magic-number; /* 1rem * 1.4 */
 }
 
 .container img {
@@ -62,9 +65,9 @@ h4 {
 .top-nav {
     top: 0;
     overflow: hidden;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $border-line-color;
     padding: 0.8rem;
-    background: white;
+    background: $background-color;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -73,7 +76,7 @@ h4 {
 
 .top-nav a {
     text-align: center;
-    color: rgb(25, 0, 255);
+    color: $link-color;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -86,11 +89,11 @@ h4 {
     position: fixed;
     bottom: 0;
     overflow: hidden;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $border-line-color;
     width: 100%;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
-    background: white;
+    background: $background-color;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -99,12 +102,12 @@ h4 {
 
 .bottom-nav a {
     text-align: center;
-    color: #666;
+    color: $bottom-nav-color;
     cursor: pointer;
 }
 
 .bottom-nav a.active {
-    color: #4e75ba;
+    color: $bottom-nav-active-color;
 }
 
 .bottom-nav i {
@@ -117,6 +120,6 @@ h4 {
 
 @media (min-width: 700px) {
     .bottom-nav {
-        max-width: 72em;
+        max-width: $body-max-width;
     }
 }

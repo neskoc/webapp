@@ -2,9 +2,9 @@
 
 h1.product-name {
     margin-top: 0;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2.4rem;
-    margin-bottom: 2.8rem;
+    font-family: $header-font-family;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-margin-bottom;
 }
 
 .inv-container {
@@ -17,16 +17,16 @@ h1.product-name {
     flex-wrap: wrap;
     cursor: pointer;
     text-decoration: underline;
-    color: rgb(25, 0, 255);
+    color: $link-color;
 }
 
 .flex-row:hover {
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: $list-item-hover-font-size;
 }
 
 .flex-row:nth-child(even) {
-    background-color: #ddd;
+    background-color: $list-background-color;
 }
 
 .flex-item {
@@ -44,10 +44,9 @@ h1.product-name {
     text-align: right;
 }
 
-
 .product-info {
-    font-family: 'Merriweather', sans-serif;
-    font-size: 1.3rem;
+    font-family: $standard-font-family;
+    font-size: $product-info-font-size;
     margin-top: 0;
     width: 100%;
     overflow: hidden;
