@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 /* jshint node: true */
 
 "use strict";
@@ -16,6 +16,9 @@ import { home } from "./home.js";
 
     window.mainContainer = document.createElement("main");
     window.mainContainer.className = "container";
+
+    window.commandStripe = document.createElement("div");
+    window.commandStripe.id = "command-stripe";
 
     window.navigation = document.createElement("nav");
     window.navigation.className = "bottom-nav";

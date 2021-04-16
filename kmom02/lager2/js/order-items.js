@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 /* jshint node: true */
 
 "use strict";
@@ -7,10 +7,11 @@
 
 import { menu } from "./menu.js";
 import { newOrders } from "./new-orders.js";
+import { utils } from "./utils.js";
 
-let orderItems = (function () {
-    let showOrderItems = function (product) {
-        window.topNavigation.innerHTML = "";
+let orderItems = {
+    showOrderItems: function (order) {
+        utils.cleanWindow();
 
         let topNavElement = document.createElement("a");
 
@@ -19,44 +20,36 @@ let orderItems = (function () {
 
         window.topNavigation.appendChild(topNavElement);
 
-        window.mainContainer.innerHTML = "";
+        let orderName = document.createElement("h1");
 
-        let productName = document.createElement("h1");
+        orderName.className = "product-name";
+        orderName.textContent = order.name;
 
-        productName.className = "product-name";
-        productName.textContent = product.name;
+        let orderInfoList = document.createElement("dl");
 
-        let productInfoList = document.createElement("dl");
+        orderInfoList.className = "product-info";
 
-        productInfoList.className = "product-info";
-
-        for (let key in product) {
+        for (let key in order) {
             if (key !== "name" && key !== "order_items") {
-                let productInfoTerm = document.createElement("dt");
-                let productInfoDescription = document.createElement("dd");
+                let orderInfoTerm = document.createElement("dt");
+                let orderInfoDescription = document.createElement("dd");
 
-                productInfoTerm.textContent = key + ":";
-                productInfoDescription.textContent = product[key];
+                orderInfoTerm.textContent = key + ":";
+                orderInfoDescription.textContent = order[key];
 
-                productInfoList.appendChild(productInfoTerm);
-                productInfoList.appendChild(productInfoDescription);
+                orderInfoList.appendChild(orderInfoTerm);
+                orderInfoList.appendChild(orderInfoDescription);
             }
         }
 
-        window.mainContainer.appendChild(productName);
-        window.mainContainer.appendChild(productInfoList);
+        window.mainContainer.appendChild(orderName);
+        window.mainContainer.appendChild(orderInfoList);
 
         window.rootElement.appendChild(window.topNavigation);
         window.rootElement.appendChild(window.mainContainer);
 
         menu.showMenu("checklist");
-    };
-
-    return {
-        showOrderItems: showOrderItems
-    };
-})();
-
-export {
-    orderItems
+    }
 };
+
+export { orderItems };

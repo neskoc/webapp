@@ -454,6 +454,20 @@ body {
   margin: auto;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+#command-stripe {
+  display: block;
+  position: fixed;
+  bottom: 5rem;
+  overflow: hidden;
+  width: 95%;
+  align-self: center;
+}
+
 main {
   padding: 1.4rem 0.6rem;
 }
@@ -485,6 +499,7 @@ h3 {
 .container {
   padding: 1rem;
   margin-bottom: 3.2rem;
+  flex-grow: 10;
 }
 
 .container p {
@@ -503,7 +518,7 @@ h3 {
   overflow: hidden;
   border-bottom: 1px solid #ccc;
   padding: 0.8rem;
-  background: white;
+  background: #fff;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -529,7 +544,7 @@ h3 {
   width: 100%;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
-  background: white;
+  background: #fff;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -552,6 +567,55 @@ h3 {
 
 .bottom-nav span {
   font-size: 0.7rem;
+}
+
+.button {
+  color: #333;
+  background-color: #fff;
+  background-image: linear-gradient(#fff, #eee);
+  border: 1px solid #ccc;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.4rem;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  line-height: 1.4;
+}
+
+.button:hover {
+  background-color: #ddd;
+  background-image: none;
+}
+
+.button:active {
+  background-color: #dcdcdc;
+  background-image: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.blue-button {
+  color: #fff;
+  background-color: #2049e1;
+  background-image: linear-gradient(#2049e1, #0039d0);
+  border-color: #0029c0;
+}
+
+.blue-button:hover {
+  background-color: #0029c0;
+  background-image: none;
+}
+
+.blue-button:active {
+  background-color: #0029c0;
+  background-image: none;
+  box-shadow: inset 0 2px 4px #0019b0;
+}
+
+.full-width-button {
+  width: 100%;
 }
 
 @media (min-width: 700px) {

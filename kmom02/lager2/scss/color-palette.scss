@@ -1,7 +1,26 @@
 /* color-palett.csss */
 
 $border-line-color: #ccc;
-$background-color: white;
+$background-color: #fff;
+
 $link-color: #1900ff;
+
 $bottom-nav-color: #666;
 $bottom-nav-active-color: #0048b4;
+
+$button-color: #333;
+$button-background-color: #fff;
+$button-hover-background-color: #ddd;
+$button-active-background-color: #dcdcdc;
+$button-background-end-gradient:  #eee;
+$button-border-color: $border-line-color;
+
+$blue-button-color: #fff;
+$blue-button-background-color: #2049e1;
+$blue-button-hover-background-color: #0029c0;
+$blue-button-active-background-color: #0029c0;
+$blue-button-background-end-gradient:  #0039d0;
+$blue-button-border-color: #0029c0;
+$blue-button-box-shadow-color: #0019b0;
+
+$list-background-color: #ddd;

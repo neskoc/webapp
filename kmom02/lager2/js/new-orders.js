@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 /* jshint node: true */
 
 "use strict";
@@ -8,17 +8,18 @@
 import { menu } from "./menu.js";
 import { orders } from "./orders.js";
 import { orderDetails } from "./order-details.js";
+import { utils } from "./utils.js";
 
 let newOrders = {
-    showNewOrders: function() {
-        orders.getAllOrders(newOrders.renderOrders);
+    showNewOrders: function(noCache = false) {
+        orders.getAllOrders(newOrders.renderOrders, noCache);
     },
 
     renderOrders: function () {
         if (document.contains(document.getElementById("top-nav"))) {
             window.rootElement.removeChild(window.topNavigation);
         }
-        window.mainContainer.innerHTML = "";
+        utils.cleanWindow();
 
         let title = document.createElement("h1");
 
@@ -29,7 +30,7 @@ let newOrders = {
 
         orderList.className = "inv-container";
 
-        let newOrders = orders.allOrders.filter(order => order.status === 'Ny');
+        let newOrders = orders.allOrders.filter(order => order.status_id === 100);
         let orderRows = newOrders.map(order => generateOrderList(order));
 
         orderRows.map(orderRow => orderList.appendChild(orderRow));

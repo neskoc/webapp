@@ -20,8 +20,10 @@ $h2-margin-bottom: $magic-number;
 $h3-font-size: 1.4rem;
 $h3-margin-bottom: 0;
 
-$list-background-color: #ddd;
-
 $product-info-font-size: 1.3rem;
 
 $list-item-hover-font-size: 1.5rem;
+
+$button-font-size: $h3-font-size;
+$button-padding: 0.4rem $body-font-size;
+$button-line-hight: $body-line-hight;

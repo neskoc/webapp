@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 /* jshint node: true */
 
 "use strict";
@@ -26,6 +26,12 @@ const utils = {
                 element.removeChild(element.firstChild);
             }
         }
+    },
+
+    cleanWindow: function() {
+        window.topNavigation.innerHTML = "";
+        window.mainContainer.innerHTML = "";
+        window.commandStripe.innerHTML = "";
     },
 
     generateProductListForPick: function(products) {

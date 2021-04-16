@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 /* jshint node: true */
 
 "use strict";
@@ -6,13 +6,14 @@
 // home.js
 
 import { menu } from "./menu.js";
+import { utils } from "./utils.js";
 
 let home = (function () {
     let showHome = function () {
         if (document.contains(document.getElementById("top-nav"))) {
             window.rootElement.removeChild(window.topNavigation);
         }
-        window.mainContainer.innerHTML = "";
+        utils.cleanWindow();
 
         let title = document.createElement("h1");
 

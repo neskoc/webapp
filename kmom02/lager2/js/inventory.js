@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 /* jshint node: true */
 
 "use strict";
@@ -8,6 +8,7 @@
 import { menu } from "./menu.js";
 import { productDetails } from "./product-details.js";
 import { products } from "./products.js";
+import { utils } from "./utils.js";
 
 let inventory = {
     showInventory: function() {
@@ -18,7 +19,7 @@ let inventory = {
         if (document.contains(document.getElementById("top-nav"))) {
             window.rootElement.removeChild(window.topNavigation);
         }
-        window.mainContainer.innerHTML = "";
+        utils.cleanWindow();
 
         let title = document.createElement("h1");
 
@@ -53,10 +54,10 @@ let generateProductList = function (product) {
     productName.className = "flex-item left";
     productName.textContent = product.name;
 
-    let productId = document.createElement("div");
+    let productAmount = document.createElement("div");
 
-    productId.className = "flex-item right";
-    productId.textContent = product.id;
+    productAmount.className = "flex-item right";
+    productAmount.textContent = product.stock;
 
     productRow.addEventListener("click", function handleClick() {
         console.log(product);
@@ -64,7 +65,7 @@ let generateProductList = function (product) {
     });
 
     productRow.appendChild(productName);
-    productRow.appendChild(productId);
+    productRow.appendChild(productAmount);
 
     return productRow;
 };
