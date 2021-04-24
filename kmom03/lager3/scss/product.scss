@@ -1,0 +1,137 @@
+/* product.scss */
+
+h1.product-name {
+    margin-top: 0;
+    font-family: $header-font-family;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-margin-bottom;
+}
+
+.inv-container {
+    max-width: 30em;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+    text-decoration: underline;
+    color: $link-color;
+}
+
+.flex-row:hover {
+    text-decoration: none;
+    font-size: $list-item-hover-font-size;
+}
+
+.flex-row:nth-child(even) {
+    background-color: $list-background-color;
+}
+
+.flex-item {
+    text-align: left;
+    margin: 6px;
+}
+
+.flex-item.left {
+    order: 1;
+    flex-grow: 3;
+}
+
+.flex-item.right {
+    order: 2;
+    text-align: right;
+}
+
+.card {
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.96rem;
+}
+
+.container a.button {
+    margin-bottom: 1rem;
+}
+
+.container .card-title {
+    font-size: 1.4rem;
+    display: block;
+    color: #222;
+    background-color: $card-background-color;
+    padding: 4px 10px;
+    margin-top: 0;
+}
+
+.card-info {
+    font-size: 1.12rem;
+    color: $card-text-color;
+}
+
+.product-info {
+    font-family: $standard-font-family;
+    font-size: $product-info-font-size;
+    margin-top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+dl.product-info {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: visible;
+    color: $card-text-color;
+}
+
+.product-info dt {
+    flex: 0 0 42%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.product-info dt::after {
+    content: ":";
+}
+
+.product-info dd {
+    flex: 0 0 50%;
+    margin-left: auto;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.container .card-title,
+.product-info dt {
+    padding-left: 10px;
+}
+
+.product-info dd {
+    padding-right: 10px;
+}
+
+@media (max-width: 375px) {
+    .product-info dt {
+        flex: 0 0 50%;
+    }
+
+    .product-info dd {
+        flex: 0 0 40%;
+    }
+}
+
+@media (min-width: 580px) {
+    .product-info dt {
+        flex: 0 0 25%;
+    }
+
+    .product-info dd {
+        flex: 0 0 70%;
+    }
+}

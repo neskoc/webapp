@@ -1,4 +1,4 @@
-/* jshint esversion: 8 */
+/* jshint esversion: 6 */
 /* jshint node: true */
 
 "use strict";
@@ -10,28 +10,21 @@ import { menu } from "./menu.js";
 let md = window.markdownit();
 
 let report = (function () {
-    let showReport = async function () {
+    let showReport = function () {
         let innerHtml = "";
 
         window.mainContainer.innerHTML = "";
 
-        await fetch("markdown/kmom01.md")
+        fetch("markdown/kmom01.md")
             .then(function(response) {
                 return response.text();
             })
             .then(function(result) {
                 innerHtml += md.render(result);
+                console.log(innerHtml);
             });
 
-        await fetch("markdown/kmom02.md")
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(result) {
-                innerHtml += md.render(result);
-            });
-
-        await fetch("markdown/kmom03.md")
+        fetch("markdown/kmom02.md")
             .then(function(response) {
                 return response.text();
             })
@@ -42,7 +35,6 @@ let report = (function () {
             });
 
         window.mainContainer.innerHTML = innerHtml;
-        // window.rootElement.appendChild(window.mainContainer);
 
         menu.showMenu("people");
     };

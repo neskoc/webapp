@@ -1,0 +1,37 @@
+/* color-palette.scss */
+
+$border-line-color: #ccc;
+$background-color: #fff;
+
+$link-color: #1900ff;
+
+$bottom-nav-color: #666;
+$bottom-nav-active-color: #0048b4;
+
+$button-color: #333;
+$button-background-color: #fff;
+$button-hover-background-color: #ddd;
+$button-active-background-color: #dcdcdc;
+$button-background-end-gradient:  #eee;
+$button-border-color: $border-line-color;
+
+$blue-button-color: #fff;
+$blue-button-background-color: #2049e1;
+$blue-button-hover-background-color: #0029c0;
+$blue-button-active-background-color: $blue-button-hover-background-color;
+$blue-button-background-end-gradient:  #0039d0;
+$blue-button-border-color: $blue-button-hover-background-color;
+$blue-button-box-shadow-color: #0019b0;
+
+$green-button-color: $blue-button-color;
+$green-button-background-color: #2ecc40;
+$green-button-hover-background-color: #124f19;
+$green-button-active-background-color: $green-button-hover-background-color;
+$green-button-background-end-gradient:  #1b7926;
+$green-button-border-color: #1b7926;
+$green-button-box-shadow-color: #0e4114;
+
+$list-background-color: #ddd;
+
+$card-text-color: #444;
+$card-background-color: #5c9;

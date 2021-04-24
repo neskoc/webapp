@@ -1,0 +1,209 @@
+/* style.scss */
+@import '../node_modules/normalize.css/normalize';
+@import 'typography';
+@import 'variables';
+@import 'color-palette';
+@import 'product';
+@import 'forms';
+
+html {
+    font-size: 100%;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body {
+    font-family: $standard-font-family;
+    font-size: $body-font-size;
+    line-height: $body-line-hight;
+    max-width: $body-max-width;
+    margin: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#command-stripe {
+    display: block;
+    position: fixed;
+    bottom: 5rem;
+    overflow: hidden;
+    width: 95%;
+    align-self: center;
+}
+
+main {
+    padding: 1.4rem 0.6rem;
+}
+
+h1,
+h1.title,
+h2,
+h3 {
+    margin-top: 0;
+    font-family: $header-font-family;
+}
+
+h1.title {
+    font-size: $h1-font-size;
+    margin-bottom: $h1-margin-bottom;
+    border-bottom: 1px solid $border-line-color;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    margin-bottom: $h2-margin-bottom;
+}
+
+h3 {
+    font-size: $h3-font-size;
+    margin-bottom: $h3-margin-bottom;
+}
+
+.container {
+    padding: 1rem;
+    margin-bottom: 3.2rem;
+    flex-grow: 10;
+}
+
+.container p {
+    line-height: $body-line-hight;
+    font-size: $body-font-size;
+    margin-bottom: $magic-number; /* 1rem * 1.4 */
+}
+
+.container img {
+    width: 100%;
+}
+
+.top-nav {
+    top: 0;
+    overflow: hidden;
+    border-bottom: 1px solid $border-line-color;
+    padding: 0.8rem;
+    background: $background-color;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.top-nav a {
+    text-align: center;
+    color: $link-color;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.top-nav a:hover {
+    text-decoration: none;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    border-top: 1px solid $border-line-color;
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background: $background-color;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    text-align: center;
+    color: $bottom-nav-color;
+    cursor: pointer;
+}
+
+.bottom-nav a.active {
+    color: $bottom-nav-active-color;
+}
+
+.bottom-nav i {
+    display: block;
+}
+
+.bottom-nav span {
+    font-size: 0.7rem;
+}
+
+.button {
+    color: $button-color;
+    background-color: $button-background-color;
+    background-image: linear-gradient($button-background-color, $button-background-end-gradient);
+    border: 1px solid $button-border-color;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: $header-font-family;
+    font-size: $button-font-size;
+    padding: $button-padding;
+    text-align: center;
+    border-radius: 0.2rem;
+    line-height: $button-line-hight;
+}
+
+.button:hover {
+    background-color: $button-hover-background-color;
+    background-image: none;
+}
+
+.button:active {
+    background-color: $button-active-background-color;
+    background-image: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.blue-button {
+    color: $blue-button-color;
+    background-color: $blue-button-background-color;
+    background-image: linear-gradient($blue-button-background-color, $blue-button-background-end-gradient);
+    border-color: $blue-button-border-color;
+}
+
+.blue-button:hover {
+    background-color: $blue-button-hover-background-color;
+    background-image: none;
+}
+
+.blue-button:active {
+    background-color: $blue-button-active-background-color;
+    background-image: none;
+    box-shadow: inset 0 2px 4px $blue-button-box-shadow-color;
+}
+
+.green-button {
+    color: $green-button-color;
+    background-color: $green-button-background-color;
+    background-image: linear-gradient($green-button-background-color, $green-button-background-end-gradient);
+    border-color: $green-button-border-color;
+}
+
+.green-button:hover {
+    background-color: $green-button-hover-background-color;
+    background-image: none;
+}
+
+.green-button:active {
+    background-color: $green-button-active-background-color;
+    background-image: none;
+    box-shadow: inset 0 2px 4px $green-button-box-shadow-color;
+}
+
+.full-width-button {
+    width: 100%;
+}
+
+@media (min-width: 667px) {
+    .bottom-nav {
+        max-width: $body-max-width;
+    }
+}

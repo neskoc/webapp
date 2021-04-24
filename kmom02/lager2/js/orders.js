@@ -14,7 +14,9 @@ let orders = {
 
     getAllOrders: function(callback, noCache = false) {
         if (noCache) {
-            this.allOrders = [];
+            console.log("noCache", noCache);
+            products.allProducts = [];
+            orders.allOrders = [];
         } else if (orders.allOrders.length > 0) {
             return callback();
         }

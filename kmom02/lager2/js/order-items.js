@@ -16,7 +16,9 @@ let orderItems = {
         let topNavElement = document.createElement("a");
 
         topNavElement.textContent = "New orders";
-        topNavElement.addEventListener("click", newOrders.showNewOrders);
+        topNavElement.addEventListener("click", function() {
+            newOrders.showNewOrders(true);
+        });
 
         window.topNavigation.appendChild(topNavElement);
 
