@@ -3,12 +3,12 @@
 
 "use strict";
 
-// js/views/new-indelivery.js
+// js/views/newIndelivery.js
 
 import m from 'mithril';
 import { lager } from "../models/lager.js";
 
-let main = {
+let changeOrderStatus = {
     oninit: function() {
         lager.resetCurrentForm();
     },
@@ -58,10 +58,4 @@ let main = {
     }
 };
 
-let newIndelivery = {
-    view: function() {
-        return m("main.container", m(main));
-    }
-};
-
-export { newIndelivery };
+export { changeOrderStatus };

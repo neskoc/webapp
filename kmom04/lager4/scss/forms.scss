@@ -40,13 +40,17 @@ input {
     overflow: visible;
 }
 
-@media (max-width: 667px) {
+input.space {
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 668px) {
     .input {
         width: 100%;
     }
 }
 
-@media (min-width: 667px) {
+@media (min-width: 668px) {
     .input {
         width: 32rem;
     }

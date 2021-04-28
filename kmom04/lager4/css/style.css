@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* style.scss */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -490,6 +491,133 @@ dl.product-info {
     flex: 0 0 70%;
   }
 }
+@media only screen and (max-width: 668px) {
+  .input {
+    width: 100%;
+  }
+
+  .table-stacked {
+    display: block;
+  }
+  .table-stacked tr {
+    display: block;
+  }
+  .table-stacked thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-stacked tbody {
+    display: block;
+  }
+  .table-stacked td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: right;
+  }
+  .table-stacked td::before {
+    /* För att visa tabell rubrik */
+    content: attr(data-title);
+    /* Använder top och left för efterlikna padding */
+    position: absolute;
+    top: 0.33rem;
+    left: 0.33rem;
+    width: 45%;
+    padding-right: 0.55rem;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+/* invoices.scss */
+.table {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+}
+.table th {
+  text-align: left;
+}
+.table td {
+  border-top: 1px solid #ccc;
+}
+.table th,
+.table td {
+  white-space: nowrap;
+  padding: 0.2rem 0.8rem;
+}
+.table td.right {
+  text-align: right;
+}
+.table .number-cell {
+  text-align: right;
+}
+
+.tr-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #1900ff;
+}
+
+.table-striped tr:nth-of-type(2n) {
+  background-color: #eee;
+}
+
+.table-scroll {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 668px) {
+  .input {
+    width: 100%;
+  }
+
+  .table-stacked {
+    display: block;
+  }
+  .table-stacked tr {
+    display: block;
+  }
+  .table-stacked thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-stacked tbody {
+    display: block;
+  }
+  .table-stacked td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: right;
+  }
+  .table-stacked td::before {
+    /* För att visa tabell rubrik */
+    content: attr(data-title);
+    /* Använder top och left för efterlikna padding */
+    position: absolute;
+    top: 0.33rem;
+    left: 0.33rem;
+    width: 45%;
+    padding-right: 0.55rem;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
 /* forms.scss */
 .input {
   font-size: 1.4rem;
@@ -531,12 +659,16 @@ input {
   overflow: visible;
 }
 
-@media (max-width: 667px) {
+input.space {
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 668px) {
   .input {
     width: 100%;
   }
 }
-@media (min-width: 667px) {
+@media (min-width: 668px) {
   .input {
     width: 32rem;
   }
@@ -689,6 +821,7 @@ h3 {
   text-align: center;
   border-radius: 0.2rem;
   line-height: 1.4;
+  cursor: pointer;
 }
 
 .button:hover {

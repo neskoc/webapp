@@ -1,7 +1,6 @@
 {
-  "name": "lager3",
+  "name": "lager4",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs": "*",
     "mithril": "^2.0.4"
   },
   "devDependencies": {
@@ -25,10 +25,11 @@
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "*",
     "normalize.css": "^8.0.1",
-    "sass": "^1.32.8",
+    "sass": "^1.32.11",
     "stylelint": "^13.12.0",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0"
-  }
+  },
+  "description": ""
 }

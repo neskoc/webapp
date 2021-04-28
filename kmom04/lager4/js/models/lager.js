@@ -6,7 +6,7 @@
 "use strict";
 
 import m from 'mithril';
-import { apiKey, baseUrl } from "../vars.js";
+import { auth } from "./auth.js";
 
 let lager = {
     current: {
@@ -17,13 +17,13 @@ let lager = {
     loadAllDeliveries: function() {
         return m.request({
             method: "GET",
-            url: `${baseUrl}/deliveries?api_key=${apiKey}`
+            url: `${auth.baseUrl}/deliveries?api_key=${auth.apiKey}`
         }).then(function(result) {
             lager.current.deliveries = result.data;
         }).finally (function() {
             m.request({
                 method: "GET",
-                url: `${baseUrl}/products?api_key=${apiKey}`
+                url: `${auth.baseUrl}/products?api_key=${auth.apiKey}`
             }).then(function(result) {
                 lager.current.products = result.data;
                 // console.log("lager.current.products: ", lager.current.products);
@@ -31,22 +31,22 @@ let lager = {
         });
     },
     addIndelivery: function() {
-        lager.currentForm.api_key = apiKey;
+        lager.currentForm.api_key = auth.apiKey;
         console.log("lager.currentForm: ", lager.currentForm);
 
         return m.request({
             method: "POST",
-            url: `${baseUrl}/deliveries`,
+            url: `${auth.baseUrl}/deliveries`,
             body: lager.currentForm
         }).then(function() {
             console.log("lager.currentForm: ", lager.currentForm);
             let requestBody = {
-                api_key: apiKey,
+                api_key: auth.apiKey,
                 id: lager.currentForm.product_id,
                 name: lager.current.products.filter(
                     product => product.id == lager.currentForm.product_id
                 )[0].name,
-                stock: (+lager.currentForm.amount +
+                stock: (+lager.currentForm.amount + // prefix +string converts it to number
                     +lager.current.products.filter(
                         product => product.id == lager.currentForm.product_id
                     )[0].stock)
@@ -55,7 +55,7 @@ let lager = {
             console.log("requestBody: ", requestBody);
             m.request({
                 method: "PUT",
-                url: `${baseUrl}/products`,
+                url: `${auth.baseUrl}/products`,
                 body: requestBody
             }).then(function(response) {
                 console.log("update product response: ",  response);
@@ -67,7 +67,7 @@ let lager = {
         });
     },
     resetCurrentForm: function() {
-        lager.ccurrentForm = {};
+        lager.currentForm = {};
     }
 };
 

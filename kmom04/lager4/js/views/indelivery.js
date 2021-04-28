@@ -30,7 +30,7 @@ const indeliveryComponent = {
     }
 };
 
-let indelivery = {
+let main = {
     oninit: lager.loadAllDeliveries,
     view: function() {
         if (lager.current.deliveries.length < 1) {
@@ -50,6 +50,12 @@ let indelivery = {
                 return m(indeliveryComponent, delivery);
             }))
         ];
+    }
+};
+
+let indelivery = {
+    view: function() {
+        return m("main.container", m(main));
     }
 };
 

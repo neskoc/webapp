@@ -4,6 +4,7 @@
 @import 'variables';
 @import 'color-palette';
 @import 'product';
+@import 'invoices';
 @import 'forms';
 
 html {
@@ -149,6 +150,7 @@ h3 {
     text-align: center;
     border-radius: 0.2rem;
     line-height: $button-line-hight;
+    cursor: pointer;
 }
 
 .button:hover {
