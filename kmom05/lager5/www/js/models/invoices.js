@@ -7,8 +7,8 @@
 
 import m from 'mithril';
 
-import { orders } from "../models/orders.js";
-import { auth } from "../models/auth.js";
+import { orders } from "./orders.js";
+import { auth } from "./auth.js";
 
 let invoicesModel = {
     url: `${auth.baseUrl}/invoices?api_key=${auth.apiKey}`,

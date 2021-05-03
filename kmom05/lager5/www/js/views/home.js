@@ -15,6 +15,7 @@ let main = {
     oninit: function() {
         orders.getAllOrders();
         products.getAllProducts();
+        auth.checkTokenValidity();
         orders.currentOrder = orders.allOrders.filter(order => order.status_id < 600)[0];
     },
     view: function() {

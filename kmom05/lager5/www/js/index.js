@@ -7,7 +7,6 @@
 // index.js
 
 import m from 'mithril';
-import fileModel from "../models/filemodel.js";
 
 import { layout } from "./views/layout.js";
 import { home } from "./views/home.js";

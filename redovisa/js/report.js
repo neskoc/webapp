@@ -51,6 +51,16 @@ let report = (function () {
                 // window.mainContainer.innerHTML = md.render(result);
             });
 
+        await fetch("markdown/kmom05.md")
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(result) {
+                innerHtml += md.render(result);
+                console.log(innerHtml);
+                // window.mainContainer.innerHTML = md.render(result);
+            });
+
         window.mainContainer.innerHTML = innerHtml;
         // window.rootElement.appendChild(window.mainContainer);
 
