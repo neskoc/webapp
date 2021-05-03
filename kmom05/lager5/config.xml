@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="se.dbwebb.lager" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Lager</name>
+    <description>
+        SPA for the Webapp course.
+    </description>
+    <author email="cnesko@e.email" href="http://cordova.io">
+        Nenad Cuturic
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <icon density="hdpi" src="res/icon/android/mipmap-hdpi/ic_launcher.png" />
+        <icon density="mdpi" src="res/icon/android/mipmap-mdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="res/icon/android/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="res/icon/android/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="res/icon/android/mipmap-xxxhdpi/ic_launcher.png" />
+
+        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+
+        <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />
+        <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
+        <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+        <splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png" />
+        <splash density="land-xxhdpi" src="res/screen/android/splash-land-xxhdpi.png" />
+        <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png" />
+    </platform>
+    <platform name="browser">
+        <allow-intent href="market:*" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="ShowSplashScreen" value="false"/>
+        <icon density="hdpi" src="res/icon/android/mipmap-hdpi/ic_launcher.png" />
+        <icon density="mdpi" src="res/icon/android/mipmap-mdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="res/icon/android/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="res/icon/android/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="res/icon/android/mipmap-xxxhdpi/ic_launcher.png" />
+
+        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+
+        <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />
+        <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
+        <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+        <splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png" />
+        <splash density="land-xxhdpi" src="res/screen/android/splash-land-xxhdpi.png" />
+        <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

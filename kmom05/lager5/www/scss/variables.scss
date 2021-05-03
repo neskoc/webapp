@@ -1,0 +1,32 @@
+/* variables.scss */
+
+$standard-font-family: 'Merriweather', serif !default;
+$header-font-family: 'Source Sans Pro', sans-serif !default;
+
+$body-max-width: 72em;
+
+$body-font-size: 1rem;
+$body-line-hight: 1.4; /* between 1.2 and 1.5 */
+
+/* magic number = 1.4rem = line-spacing * font-size */
+$magic-number: $body-font-size * $body-line-hight;
+
+$h1-font-size: 2.4rem;
+$h1-margin-bottom: 2 * $magic-number;
+
+$h2-font-size: 2rem;
+$h2-margin-bottom: $magic-number;
+
+$h3-font-size: 1.4rem;
+$h3-margin-bottom: 0;
+
+$input-font-size: 1.4rem;
+$label-font-size: 1.2rem;
+
+$product-info-font-size: 1rem;
+
+$list-item-hover-font-size: 1.5rem;
+
+$button-font-size: $h3-font-size;
+$button-padding: 0.4rem $body-font-size;
+$button-line-hight: $body-line-hight;
